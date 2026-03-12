@@ -18,10 +18,29 @@
 #
 ---
 include:
+  # --- Standalone (left = central, no dongle) ---
   - board: xiao_ble//zmk
     shield: anywhy_flake_left rgbled_adapter
     snippet: studio-rpc-usb-uart
+    artifact-name: anywhy_flake_left
   - board: xiao_ble//zmk
     shield: anywhy_flake_right rgbled_adapter
+    artifact-name: anywhy_flake_right
+
+  # --- Dongle setup ---
+  - board: xiao_ble//zmk
+    shield: anywhy_flake_dongle
+    artifact-name: anywhy_flake_dongle
+  - board: xiao_ble//zmk
+    shield: anywhy_flake_left rgbled_adapter
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: anywhy_flake_left_peripheral
+  - board: xiao_ble//zmk
+    shield: anywhy_flake_right rgbled_adapter
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: anywhy_flake_right_peripheral
+
+  # --- Utility ---
   - board: xiao_ble//zmk
     shield: settings_reset
+    artifact-name: settings_reset

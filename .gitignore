@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+build/
+*.bin
+*.uf2
+*.hex
+*.elf
+*.map
+
+# Python
+__pycache__/
+*.pyc
+
+# West workspace (when used locally)
+.west/
+modules/
+zephyr/
+bootloader/
