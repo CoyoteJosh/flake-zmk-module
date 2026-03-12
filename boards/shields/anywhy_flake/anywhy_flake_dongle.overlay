@@ -1,5 +1,7 @@
 #include "anywhy_flake.dtsi"
 
+/delete-node/ &kscan0;
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
